@@ -1,8 +1,8 @@
 // slideinframe styles
-button-icon-size = 40px
-button-padding = 7px
+bar-icon-size ?= 33px
+bar-icon-padding ?= 7px 
+bar-height ?= 2px + bar-icon-size + 2 * bar-icon-padding
 
-page-button-margin = button-icon-size + 2 * button-padding
 
 /*==================================================
 General Slideinframe  Styles
@@ -11,11 +11,12 @@ General Slideinframe  Styles
     transform translateX(0)
 
 .slideinframe
-    padding: page-button-margin 0
+    padding: bar-height 0
     box-sizing: border-box
     display: flex
     flex-direction: column
     background-color element-background
+    // background-color: alpha(cd-background, 0.5)
     position fixed
     z-index: 99
     top 0
@@ -28,19 +29,20 @@ General Slideinframe  Styles
     .back-icon
         display: block
         margin-left auto
-        height: button-icon-size
-        width button-icon-size
+        height: bar-icon-size
+        width bar-icon-size
 
     .accept-icon
         display block
         margin-left auto
-        height: button-icon-size
-        width button-icon-size
+        height: bar-icon-size
+        width bar-icon-size
 
     .slideinframe-back-button
         background-color cd-background
+        // background-color element-background
         position absolute
-        padding button-padding (2 * button-padding)
+        padding bar-icon-padding + 1px (2 * bar-icon-padding)
         top: 0
         width 100%
         box-sizing: border-box
@@ -48,10 +50,11 @@ General Slideinframe  Styles
 
     .slideinframe-accept-button
         background-color cd-background
+        // background-color element-background
         position absolute
         bottom: 0
         width 100%
-        padding button-padding (2 * button-padding)
+        padding bar-icon-padding + 1px (2 * bar-icon-padding)
         box-sizing: border-box
         cursor pointer
 

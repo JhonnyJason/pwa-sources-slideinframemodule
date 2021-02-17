@@ -20,10 +20,12 @@ slideinframemodule.initialize = ->
 ############################################################
 slideoutFrame = (frame) ->
     frame.classList.remove("active")
+    if content? then content.classList.remove("overlayed")
     return
 
 slideinFrame = (frame) ->
     frame.classList.add("active")
+    if content? then content.classList.add("overlayed")
     return
 
 ############################################################
